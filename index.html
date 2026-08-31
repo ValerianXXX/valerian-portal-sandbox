@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#123db7" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta
+      name="description"
+      content="Valerian Portal synthetic sandbox — a safe, interactive product preview using demonstration data only."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Valerian Portal — Synthetic Sandbox" />
+    <meta property="og:description" content="Signals into action — explore a safe, interactive workspace using synthetic data only." />
+    <meta property="og:url" content="https://valerianxxx.github.io/valerian-portal-sandbox/" />
+    <meta property="og:image" content="https://valerianxxx.github.io/valerian-portal-sandbox/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Valerian Portal — Synthetic Sandbox" />
+    <meta name="twitter:description" content="Signals into action — explore a safe, interactive workspace using synthetic data only." />
+    <meta name="twitter:image" content="https://valerianxxx.github.io/valerian-portal-sandbox/og.png" />
+    <title>Valerian Portal — Synthetic Sandbox</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to workspace</a>
+    <div class="app-shell" id="app-shell">
+      <aside class="sidebar" aria-label="Primary navigation">
+        <div class="brand-row">
+          <a class="brand" href="#command-center" aria-label="Valerian Portal home">
+            <span class="brand-mark" aria-hidden="true">V</span>
+            <span class="brand-copy">
+              <strong>Valerian Portal</strong>
+              <small>Business operations</small>
+            </span>
+          </a>
+          <button
+            class="icon-button collapse-button"
+            id="sidebar-toggle"
+            type="button"
+            aria-label="Collapse navigation"
+            aria-expanded="true"
+          >
+            <span aria-hidden="true">‹</span>
+          </button>
+        </div>
+
+        <button
+          class="workspace-switcher"
+          id="workspace-switcher"
+          type="button"
+          aria-label="Switch demonstration workspace"
+        >
+          <span class="workspace-avatar" id="workspace-avatar" aria-hidden="true">AL</span>
+          <span class="workspace-copy">
+            <small>Current workspace</small>
+            <strong id="workspace-name">Aster Lending Sandbox</strong>
+          </span>
+          <span class="switcher-arrow" aria-hidden="true">⌄</span>
+        </button>
+
+        <nav class="nav-list" aria-label="Workspace modules">
+          <a class="nav-item active" href="#command-center" data-view="command" data-module="command" aria-current="page">
+            <span class="nav-icon" aria-hidden="true">⌂</span>
+            <span class="nav-label">Command Center</span>
+          </a>
+          <a class="nav-item" href="#records" data-view="records" data-module="accounts">
+            <span class="nav-icon" aria-hidden="true">▦</span>
+            <span class="nav-label">Accounts</span>
+          </a>
+          <a class="nav-item" href="#records" data-view="records" data-module="contacts">
+            <span class="nav-icon" aria-hidden="true">♙</span>
+            <span class="nav-label">Contacts</span>
+          </a>
+          <a class="nav-item" href="#records" data-view="records" data-module="leads">
+            <span class="nav-icon" aria-hidden="true">◎</span>
+            <span class="nav-label">Leads</span>
+            <span class="nav-count">28</span>
+          </a>
+          <a class="nav-item" href="#assistant" data-view="assistant" data-module="assistant">
+            <span class="nav-icon" aria-hidden="true">✦</span>
+            <span class="nav-label">AI Assistant</span>
+          </a>
+          <a class="nav-item" href="#records" data-view="records" data-module="campaigns">
+            <span class="nav-icon" aria-hidden="true">◇</span>
+            <span class="nav-label">Campaigns</span>
+          </a>
+          <a class="nav-item" href="#records" data-view="records" data-module="reports">
+            <span class="nav-icon" aria-hidden="true">▥</span>
+            <span class="nav-label">Reports</span>
+          </a>
+          <a class="nav-item" href="#records" data-view="records" data-module="settings">
+            <span class="nav-icon" aria-hidden="true">⚙</span>
+            <span class="nav-label">Settings</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-footer">
+          <div class="sandbox-state">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span class="nav-label">Synthetic demo</span>
+          </div>
+          <button class="sign-out" type="button">
+            <span class="nav-icon" aria-hidden="true">↗</span>
+            <span class="nav-label">Exit preview</span>
+          </button>
+        </div>
+      </aside>
+
+      <main class="main" id="main-content">
+        <header class="topbar">
+          <button class="mobile-menu-button" id="mobile-menu-button" type="button" aria-label="Open navigation">V</button>
+          <div class="topbar-title">
+            <span class="eyebrow" id="topbar-workspace">Aster Lending Sandbox</span>
+            <strong id="topbar-view">Command Center</strong>
+          </div>
+          <label class="search-box">
+            <span aria-hidden="true">⌕</span>
+            <span class="sr-only">Search synthetic records</span>
+            <input id="global-search" type="search" placeholder="Search synthetic records…" autocomplete="off" />
+          </label>
+          <div class="topbar-actions">
+            <label class="role-picker">
+              <span>Preview as</span>
+              <select id="role-select" aria-label="Preview interface as role">
+                <option value="Owner">Owner</option>
+                <option value="Administrator">Administrator</option>
+                <option value="Manager">Manager</option>
+                <option value="Member">Member</option>
+              </select>
+            </label>
+            <span class="user-avatar" aria-label="Signed in as Valerian Sandbox">VS</span>
+          </div>
+        </header>
+
+        <div class="demo-banner" role="status">
+          <span class="demo-badge">SANDBOX</span>
+          <span>Interactive preview with synthetic data only. Nothing here affects a real account.</span>
+          <span class="role-note" id="role-note">Owner preview · all demo modules visible</span>
+        </div>
+
+        <section class="dashboard" id="command-center" aria-labelledby="dashboard-title">
+          <div class="hero-card">
+            <div class="hero-copy">
+              <span class="eyebrow" id="hero-eyebrow">Opportunity intelligence</span>
+              <h1 id="dashboard-title">Turn scattered signals into your next best move.</h1>
+              <p id="hero-description">
+                A calm operating view for leads, customer activity and the work that needs attention now.
+              </p>
+              <div class="hero-actions">
+                <button class="primary-button" id="review-signals" type="button">Review 8 signals</button>
+                <button class="secondary-button" id="reset-demo" type="button">Reset demo</button>
+              </div>
+            </div>
+            <div class="orbit-visual" aria-label="Decorative opportunity radar with eight signals">
+              <span class="orbit orbit-one"></span>
+              <span class="orbit orbit-two"></span>
+              <span class="orbit orbit-three"></span>
+              <span class="axis axis-x"></span>
+              <span class="axis axis-y"></span>
+              <span class="signal signal-a"></span>
+              <span class="signal signal-b"></span>
+              <span class="signal signal-c"></span>
+              <span class="signal signal-d"></span>
+              <span class="radar-core">V</span>
+            </div>
+          </div>
+
+          <div class="metric-grid" aria-label="Workspace summary">
+            <article class="metric-card">
+              <span class="metric-label" id="metric-label-1">Active leads</span>
+              <strong id="metric-value-1">28</strong>
+              <span class="metric-detail positive" id="metric-detail-1">+6 this week</span>
+            </article>
+            <article class="metric-card">
+              <span class="metric-label" id="metric-label-2">Qualified</span>
+              <strong id="metric-value-2">12</strong>
+              <span class="metric-detail" id="metric-detail-2">43% conversion</span>
+            </article>
+            <article class="metric-card">
+              <span class="metric-label" id="metric-label-3">Open tasks</span>
+              <strong id="metric-value-3">9</strong>
+              <span class="metric-detail attention" id="metric-detail-3">3 due today</span>
+            </article>
+            <article class="metric-card accent-card">
+              <span class="metric-label" id="metric-label-4">Signal score</span>
+              <strong id="metric-value-4">84</strong>
+              <span class="metric-detail" id="metric-detail-4">Healthy momentum</span>
+            </article>
+          </div>
+
+          <div class="content-grid">
+            <section class="panel signal-panel" id="signal-feed" aria-labelledby="signals-title">
+              <div class="panel-header">
+                <div>
+                  <span class="eyebrow">Live priorities</span>
+                  <h2 id="signals-title">Signal radar</h2>
+                </div>
+                <button class="text-button" id="view-all-signals" type="button">View all <span aria-hidden="true">→</span></button>
+              </div>
+              <div class="signal-list" id="signal-list">
+                <article class="signal-row">
+                  <span class="signal-rank indigo">91</span>
+                  <div>
+                    <strong>Aster Ridge renewed interest</strong>
+                    <p>Pricing page revisited after 14 quiet days.</p>
+                  </div>
+                  <span class="signal-tag">High intent</span>
+                </article>
+                <article class="signal-row">
+                  <span class="signal-rank teal">82</span>
+                  <div>
+                    <strong>Three contacts joined one account</strong>
+                    <p>Potential buying committee forming at Blue Oak Trading.</p>
+                  </div>
+                  <span class="signal-tag">Relationship</span>
+                </article>
+                <article class="signal-row">
+                  <span class="signal-rank coral">76</span>
+                  <div>
+                    <strong>Follow-up window is closing</strong>
+                    <p>Four qualified leads have no next step.</p>
+                  </div>
+                  <span class="signal-tag">Action needed</span>
+                </article>
+              </div>
+            </section>
+
+            <aside class="panel brief-panel" aria-labelledby="brief-title">
+              <div class="panel-header">
+                <div>
+                  <span class="eyebrow">AI briefing</span>
+                  <h2 id="brief-title">Start with context</h2>
+                </div>
+                <span class="spark" aria-hidden="true">✦</span>
+              </div>
+              <p>
+                Eight meaningful changes were found across leads, tasks and campaigns. Three need a human decision today.
+              </p>
+              <button class="brief-prompt" id="brief-prompt" type="button">
+                <span>Prepare my priority plan</span>
+                <span aria-hidden="true">↗</span>
+              </button>
+              <small>Simulated response · no external AI request</small>
+            </aside>
+          </div>
+        </section>
+
+        <section class="workspace-view" id="records-view" aria-labelledby="records-title" hidden>
+          <div class="view-heading">
+            <div>
+              <span class="eyebrow" id="records-eyebrow">Synthetic workspace</span>
+              <h1 id="records-title">Records</h1>
+              <p id="records-description">Explore representative demonstration records without changing a real system.</p>
+            </div>
+            <button class="primary-button" id="record-action" type="button">Add synthetic record</button>
+          </div>
+          <div class="panel table-panel">
+            <div class="table-toolbar">
+              <span id="record-count">0 synthetic records</span>
+              <div class="filter-pills" aria-label="Record filters">
+                <button class="filter-pill active" type="button" data-filter="all">All</button>
+                <button class="filter-pill" type="button" data-filter="attention">Needs attention</button>
+                <button class="filter-pill" type="button" data-filter="healthy">Healthy</button>
+              </div>
+            </div>
+            <div class="data-table-wrap">
+              <table class="data-table">
+                <thead id="records-head"></thead>
+                <tbody id="records-body"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="workspace-view assistant-view" id="assistant-view" aria-labelledby="assistant-title" hidden>
+          <div class="assistant-layout">
+            <aside class="assistant-history" aria-label="Demo conversations">
+              <div class="assistant-history-header">
+                <div>
+                  <span class="eyebrow">Demo conversations</span>
+                  <h2>Recent</h2>
+                </div>
+                <button class="round-button" id="new-conversation" type="button" aria-label="Start a new demo conversation">+</button>
+              </div>
+              <button class="conversation-item active" type="button">Today’s priorities <span>Now</span></button>
+              <button class="conversation-item" type="button">Follow-up gaps <span>Earlier</span></button>
+              <button class="conversation-item" type="button">Campaign pulse <span>Yesterday</span></button>
+            </aside>
+            <div class="assistant-chat">
+              <header class="assistant-header">
+                <div>
+                  <span class="eyebrow">Valerian Assistant</span>
+                  <h1 id="assistant-title">Ask across your synthetic workspace.</h1>
+                </div>
+                <span class="local-badge">Local simulation</span>
+              </header>
+              <div class="chat-thread" id="chat-thread" aria-live="polite">
+                <article class="chat-message assistant-message">
+                  <span class="message-author">Valerian Assistant</span>
+                  <p>I found eight useful signals in this demo workspace. Ask me to summarize leads, find follow-up gaps, or draft a priority plan.</p>
+                </article>
+              </div>
+              <div class="quick-prompts" aria-label="Suggested demo prompts">
+                <button type="button" data-prompt="Summarize my highest-intent leads">Highest-intent leads</button>
+                <button type="button" data-prompt="Find records missing a next step">Missing next steps</button>
+                <button type="button" data-prompt="Draft today’s priority plan">Today’s plan</button>
+              </div>
+              <form class="composer" id="assistant-form">
+                <label for="assistant-input" class="sr-only">Message Valerian Assistant</label>
+                <textarea id="assistant-input" rows="3" maxlength="1000" placeholder="Ask about this synthetic workspace…"></textarea>
+                <div class="composer-actions">
+                  <label class="attach-button">
+                    <input id="demo-file" type="file" accept=".csv,.txt,.pdf,.png,.jpg,.jpeg" />
+                    <span aria-hidden="true">＋</span> Attach demo file
+                  </label>
+                  <span class="attachment-name" id="attachment-name"></span>
+                  <button class="primary-button" type="submit">Send</button>
+                </div>
+              </form>
+              <small class="assistant-disclaimer">Responses are deterministic examples. Files stay in this browser and are never uploaded.</small>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <dialog class="workspace-dialog" id="workspace-dialog">
+      <form method="dialog">
+        <div class="dialog-header">
+          <div>
+            <span class="eyebrow">Industry templates</span>
+            <h2>Choose a synthetic workspace</h2>
+          </div>
+          <button class="round-button" value="cancel" aria-label="Close workspace picker">×</button>
+        </div>
+        <p>Each template changes the modules, records and signals in this browser-only preview.</p>
+        <div class="workspace-options">
+          <button type="button" data-industry="lending"><span>01</span><strong>Aster Lending Sandbox</strong><small>Borrowers, applications and follow-ups</small></button>
+          <button type="button" data-industry="marketing"><span>02</span><strong>Cobalt Social Sandbox</strong><small>Clients, campaigns and content signals</small></button>
+          <button type="button" data-industry="hospitality"><span>03</span><strong>Maple Dining Sandbox</strong><small>Locations, guests and reservations</small></button>
+          <button type="button" data-industry="wellness"><span>04</span><strong>Linden Wellness Sandbox</strong><small>Clients, appointments and services</small></button>
+        </div>
+      </form>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>

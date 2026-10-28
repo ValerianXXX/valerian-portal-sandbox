@@ -198,6 +198,7 @@
 
   let state = readState();
   let toastTimer;
+  let conversationGeneration = 0;
 
   const elements = {
     shell: document.querySelector("#app-shell"),
@@ -454,7 +455,8 @@
     if (!cleanPrompt) return;
     appendMessage("user", cleanPrompt);
     elements.assistantInput.value = "";
-    window.setTimeout(() => appendMessage("assistant", assistantResponse(cleanPrompt)), 320);
+    const generation = conversationGeneration;
+    window.setTimeout(() => { if (generation === conversationGeneration) appendMessage("assistant", assistantResponse(cleanPrompt)); }, 320);
   }
 
   elements.sidebarToggle.addEventListener("click", () => {
@@ -498,6 +500,12 @@
   document.querySelector("#reset-demo").addEventListener("click", () => {
     window.localStorage.removeItem(STORAGE_KEY);
     state = { ...defaultState, addedRecords: {} };
+    conversationGeneration++;
+    elements.chatThread.replaceChildren();
+    appendMessage("assistant", "Synthetic conversation reset. No external action has occurred.");
+    elements.assistantInput.value = "";
+    document.querySelector("#demo-file").value = "";
+    elements.attachmentName.textContent = "";
     elements.globalSearch.value = "";
     renderAll();
     showToast("Synthetic workspace reset to its original state.");
@@ -534,6 +542,7 @@
     if (file) showToast("File selected locally. This static sandbox does not upload it.");
   });
   document.querySelector("#new-conversation").addEventListener("click", () => {
+    conversationGeneration++;
     elements.chatThread.innerHTML = `
       <article class="chat-message assistant-message">
         <span class="message-author">Valerian Assistant</span>

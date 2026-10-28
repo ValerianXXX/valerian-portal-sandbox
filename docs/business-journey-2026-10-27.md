@@ -26,6 +26,8 @@ Profile changes clear the active draft and increment its revision. Draft edits r
 
 Run `pnpm test:browser` to regenerate `reports/journey-1280.png` and `reports/journey-390.png`. These files are local test artifacts. The local screenshots show synthetic browser data only.
 
+The same checks now run for pull requests in `.github/workflows/verify.yml`, using Node 24, pinned pnpm 11.25.0 and the locked Playwright Chromium version. Linux CI acceptance is reported separately from the completed Windows Edge checks; adding the workflow alone is not a pass. No hosting or production action is part of this workflow.
+
 No AI before/after benefit was measured: both preparation and chat remain clearly marked samples. Dashboard metrics are illustrative, not adoption or revenue evidence.
 
 ## Configuration and release

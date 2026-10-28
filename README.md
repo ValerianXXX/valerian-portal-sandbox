@@ -24,6 +24,8 @@ pnpm test:browser
 
 Browser checks use installed Edge on Windows. On other systems, install the test browser with `pnpm exec playwright install chromium`. The application itself has no npm runtime dependency.
 
+Pull requests run the same state and desktop/mobile browser checks on Linux Chromium. The verification workflow has read-only repository permissions and does not publish the site.
+
 ## October 27 upgrade
 
 - Profile revisions and preparation sources remain visible; unknown prices, budgets and dates require owner input.

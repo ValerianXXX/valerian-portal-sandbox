@@ -1,0 +1,10 @@
+{
+  "name": "valerian-portal-synthetic-sandbox",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "test": "node --test business-demo.test.mjs",
+    "test:browser": "node scripts/check-browser.cjs"
+  },
+  "devDependencies": { "playwright": "1.62.1" }
+}

@@ -1,0 +1,104 @@
+{
+  "date": "2026-10-29",
+  "baseline": "720a815f7d21df80074a75c7c0259d7b0f99c52b",
+  "frozen": {
+    "cases": 16,
+    "beforePass": 2,
+    "beforeFail": 14,
+    "afterPass": 16,
+    "afterFail": 0,
+    "testSourceLfSha256": "effb4ee9bf5a8827a8a44d8c96afd11b22c8d2d3e18b9e39b259065ed6badee2",
+    "independentBlind": false
+  },
+  "fullStateSuite": {
+    "tests": 31,
+    "pass": 31,
+    "fail": 0,
+    "skip": 0
+  },
+  "browser": {
+    "status": "PASS",
+    "viewports": [
+      1280,
+      390
+    ],
+    "input": "synthetic",
+    "recoveredUnsavedFields": [
+      "profile",
+      "request",
+      "draft"
+    ],
+    "historyKeyboard": true,
+    "multiTabConflict": true,
+    "crossTabReset": true,
+    "injectedStorageFailures": true,
+    "cssZoomPercent": 200,
+    "externalRequests": 0,
+    "pageErrors": [],
+    "independentHuman": false
+  },
+  "initialBrowserFailure": "200% CSS zoom overflow; retained and fixed with content-width reflow",
+  "finalZoomLayout": {
+    "viewport": 1280,
+    "scrollWidth": 1280,
+    "overflow": []
+  },
+  "interactive": {
+    "browser": "in-app browser",
+    "desktopViewport": [
+      1280,
+      720
+    ],
+    "desktopDocumentWidth": 1265,
+    "mobileViewport": [
+      390,
+      844
+    ],
+    "mobileDocumentWidth": 375,
+    "historyEntries": 2,
+    "resetAfterReload": "PASS",
+    "assistantReset": "PASS",
+    "consoleErrors": [],
+    "oneBatchedMobileNavigationDidNotActivate": true,
+    "freshObservedPointerNavigation": "PASS",
+    "keyboardNavigation": "PASS",
+    "physicalPhone": false,
+    "independentHuman": false
+  },
+  "sourceLfSha256": {
+    "app.js": "8ace44211d011e32f308f132cf33c93841057e3e557df08c9352ae04ecad4c4e",
+    "business-demo.mjs": "cbb036a9026bd3d8035c6b36923005ee91fcb54df4589006250e6186fc805648",
+    "demo-state.mjs": "c55df46691ac26b88c43eaac70ca516a11aa8ea3909016055fa8b3ea5b3b1026",
+    "demo-storage.mjs": "97aab46a2ed45e53b35e8f5c8af5076288952dca9f69fbbfca8b0fa8ebe67000",
+    "demo-template.mjs": "993ef893b7533a7ce8395736b82891278d705267aece85ba04db9064192f06b6",
+    "index.html": "2c91946ff3e6923a5c769f0d881b993d57a75c7a697564510fae14b01ea6473d",
+    "styles.css": "182c097849c72bc72d4eb4a5a776088e9d218b553dd03c3b0659023b932ee183",
+    "scripts/check-browser.cjs": "123a475034fe17be3a8355442edfb86de210166b4f3d0269f7467d30faaed038",
+    "state-boundaries.test.mjs": "effb4ee9bf5a8827a8a44d8c96afd11b22c8d2d3e18b9e39b259065ed6badee2",
+    "storage.test.mjs": "92d2db3edf611cbe85a28a91d55a2bc4ebc7e34435d49eeb550a353f666857ff",
+    "business-demo.test.mjs": "8cccd4a61cf6225a960527668acc706a799fcf76c00dd8927260dde52d6b5508",
+    "package.json": "4c4a5cbcf424177e41ba7e891241348bcac17d0bdf7533871161cdb7f269b704"
+  },
+  "localLogSha256": {
+    "state-before-2026-10-29.log": "a34d2460ca4bf1d598c5835d2364a99d05e1a7c5748258593f5c18d3229c2e8a",
+    "state-final-2026-10-29.log": "d2943dbda8b77ab8a5700b389261fec30be427d7b0e2af20e2006bb9ef6aee96",
+    "browser-recovery-first-2026-10-29.log": "be775021fb2d3b13f197dd726677b792e64900f0ceb7c56e0462e1be3b72abf5",
+    "browser-recovery-second-2026-10-29.log": "8dae1da773a5b624e8daea876f6bd04cd9015d6f1941637f093393ae811226c2",
+    "browser-recovery-final-2026-10-29.log": "8dae1da773a5b624e8daea876f6bd04cd9015d6f1941637f093393ae811226c2"
+  },
+  "screenshots": {
+    "recovery-desktop-2026-10-29.jpg": "f1655795ef8887c2fd195208071e1e7ef87adf2c00989dd0f2e34963d1fccafd",
+    "recovery-mobile-2026-10-29.jpg": "f944450de5be6502ec6d32d7d26cc5b6a41ca251b8092bb48fb6863075bdba02"
+  },
+  "externalModelCalls": 0,
+  "aiQualityBenefit": "not measured; deterministic templates remain in use",
+  "productionActions": 0,
+  "serverMigration": false,
+  "localStorageMigration": "v1 preserved; v2 confirmation requires bound snapshot",
+  "limits": [
+    "optimistic cross-tab detection is not an atomic multi-user database",
+    "latest 20 histories only",
+    "browser storage is not authentication",
+    "physical devices, native zoom and independent users not tested"
+  ]
+}

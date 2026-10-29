@@ -1,0 +1,76 @@
+{
+  "passed": 2,
+  "frozenTestLfSha256": "effb4ee9bf5a8827a8a44d8c96afd11b22c8d2d3e18b9e39b259065ed6badee2",
+  "failed": 14,
+  "date": "2026-10-29",
+  "baseline": "720a815f7d21df80074a75c7c0259d7b0f99c52b",
+  "total": 16,
+  "independentlyBlind": false,
+  "modelCalls": 0,
+  "observations": [
+    {
+      "case": "confirmation is idempotent for the same reviewed version",
+      "pass": false
+    },
+    {
+      "case": "continuation is idempotent and cannot add business outcomes",
+      "pass": false
+    },
+    {
+      "case": "unchanged profile save preserves current review",
+      "pass": false
+    },
+    {
+      "case": "unchanged draft save preserves current review",
+      "pass": false
+    },
+    {
+      "case": "negative profile revisions are not restored",
+      "pass": false
+    },
+    {
+      "case": "unknown profile properties are discarded",
+      "pass": false
+    },
+    {
+      "case": "history snapshots do not share source objects with current state",
+      "pass": false
+    },
+    {
+      "case": "restoring a changed draft cannot retain confirmation",
+      "pass": false
+    },
+    {
+      "case": "restoring changed source evidence cannot retain confirmation",
+      "pass": false
+    },
+    {
+      "case": "restoring a changed request cannot retain confirmation",
+      "pass": false
+    },
+    {
+      "case": "continuation rejects a mismatched review snapshot",
+      "pass": false
+    },
+    {
+      "case": "malformed history is not silently restored as reviewed work",
+      "pass": false
+    },
+    {
+      "case": "source labels remain tied to the saved profile and request",
+      "pass": false
+    },
+    {
+      "case": "restore rejects excessive serialized input before retaining it",
+      "pass": false
+    },
+    {
+      "case": "valid revised draft still needs explicit review and survives reload",
+      "pass": true
+    },
+    {
+      "case": "reset creates a fresh independent collection",
+      "pass": true
+    }
+  ]
+}

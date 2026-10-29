@@ -4,7 +4,7 @@ Explore a business workflow: save a reusable business profile, describe an opera
 
 Live site: `https://valerianxxx.github.io/valerian-portal-sandbox/`
 
-The live site may lag this branch. The October 27 upgrade is prepared for review; deployment has not been performed.
+The live site may lag this branch. The October 27 journey and October 29 recovery changes are prepared for review; deployment has not been performed.
 
 ## Run and verify
 
@@ -35,6 +35,16 @@ Pull requests run the same state and desktop/mobile browser checks on Linux Chro
 
 See [verification and release notes](docs/business-journey-2026-10-27.md) and [CHANGELOG](CHANGELOG.md). This demo uses deterministic templates: it measures interaction behavior, not AI quality or customer outcomes.
 
+## October 29 recovery and review boundaries
+
+- Confirmation belongs to the exact saved profile, request, draft and sources. Repeated confirm/continue actions are idempotent.
+- Unsaved profile, request and draft inputs survive refresh when browser storage works. They block confirmation and continuation until saved or explicitly discarded.
+- Open the latest 20 history entries to inspect their original text and sources. Editing the current draft does not mutate earlier snapshots.
+- Another tab's changes require an explicit reload instead of silently overwriting them. Storage failures disclose that work exists only in the current tab.
+- Version 1 data is recovered with fresh review required; its original browser key remains available for rollback until Reset demo clears both versions.
+
+The frozen state comparison improved from 2/16 to 16/16 passing cases; all 31 state/storage tests pass. Desktop and mobile recovery checks, keyboard history, cross-tab conflict/reset and 200% CSS zoom are covered. These are synthetic software checks, not independent user acceptance. See [recovery evidence, architecture and rollback](docs/recoverable-state-2026-10-29.md).
+
 ## Safety boundary
 
 - Synthetic demonstration data only.
@@ -42,4 +52,4 @@ See [verification and release notes](docs/business-journey-2026-10-27.md) and [C
 - Demo changes are stored only in the current browser and can be reset from the interface.
 - Selected files are never read or uploaded.
 
-The complete application, production services and private implementation remain in a separate private repository.
+This repository is a standalone demonstration. Its build and verification do not require or connect to a private product repository.

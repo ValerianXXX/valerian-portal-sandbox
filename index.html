@@ -138,6 +138,7 @@
           <span class="role-note" id="role-note">Owner preview · all demo modules visible</span>
         </div>
 
+        <p id="browser-storage-notice" class="storage-notice" role="status" hidden>Browser storage is unavailable. Workspace changes may be lost on reload.</p>
         <section class="dashboard" id="command-center" aria-labelledby="dashboard-title">
           <div class="hero-card">
             <div class="hero-copy">
@@ -173,7 +174,7 @@
                 <label>Business name<input id="business-name" maxlength="80" required></label>
                 <label>Offering<input id="business-offering" maxlength="180" required></label>
                 <label>Service hours<input id="business-hours" maxlength="100" required></label>
-                <button class="primary-button" type="submit">Save business profile</button><p id="profile-saved"></p>
+                <button class="primary-button" type="submit">Save business profile</button><p id="profile-saved"></p><p>Changing saved facts starts a new preparation. Confirmed versions remain in history.</p>
               </form>
               <form id="request-form" class="journey-card" hidden><h3>2 · Describe the work</h3>
                 <label>Business request<textarea id="business-request" maxlength="600" rows="4" required placeholder="Prepare a Tuesday dinner activity using our saved business facts."></textarea></label>
@@ -186,9 +187,12 @@
               <div><h4>Sources for this preparation</h4><ul id="journey-sources"></ul><p>Missing: any requested promotion price, budget, dates and permission to publish. These are not inferred.</p></div></div>
               <label class="review-consent"><input id="sources-reviewed" type="checkbox">I reviewed this synthetic draft and its sources.</label>
               <div class="hero-actions"><button class="primary-button" id="confirm-draft" type="button">Confirm draft</button><button class="secondary-button" id="continue-draft" type="button" disabled>Continue demo work</button></div>
-              <p id="saved-count"></p><p id="next-step" hidden>4 · Internal follow-up: ask the owner for the missing details, then prepare the publication handoff. No message was sent, no post was published and no customer outcome occurred.</p>
+              <p id="next-step" hidden>4 · Internal follow-up: ask the owner for the missing details, then prepare the publication handoff. No message was sent, no post was published and no customer outcome occurred.</p>
             </div>
+            <p id="pending-notice" class="storage-notice" hidden>Unsaved edits are kept for recovery when browser storage is available. Save each change or discard edits before continuing with a reviewed draft.</p>
+            <div class="hero-actions"><button id="discard-changes" class="secondary-button" type="button" hidden>Discard unsaved changes</button><button id="reload-saved" class="secondary-button" type="button" hidden>Load latest saved demo (discard tab edits)</button></div>
             <p id="journey-status" role="status" aria-live="polite">Start by saving a synthetic business profile. Reset demo clears this journey too.</p>
+            <section class="journey-history" aria-labelledby="history-title"><h3 id="history-title">Saved demo history</h3><p id="saved-count"></p><p>Read-only snapshots of synthetic preparation. These are not records of completed customer work.</p><div id="journey-history"></div></section>
           </section>
 
           <div class="metric-grid" aria-label="Workspace summary">

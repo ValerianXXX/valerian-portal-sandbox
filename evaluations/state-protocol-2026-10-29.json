@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-29",
+  "baselineCommit": "720a815f7d21df80074a75c7c0259d7b0f99c52b",
+  "input": "original synthetic examples",
+  "frozenCases": 16,
+  "suite": "state-boundaries.test.mjs",
+  "purpose": "Repeat actions, snapshot identity, safe restoration and history isolation before refactoring the existing workflow",
+  "notIndependentBlind": true,
+  "browserAcceptancePlanned": ["unsaved profile, request and draft gates", "refresh recovery", "history inspection", "storage rejection", "cross-tab conflict", "keyboard", "desktop and mobile", "reset"],
+  "productionActions": 0,
+  "externalModelCalls": 0
+}

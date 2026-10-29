@@ -322,7 +322,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   padding: 7px;
   border-left-width: 1px;
 }
-.main { min-width: 0; }
+.main { min-width: 0; container-type: inline-size; container-name: workspace; }
 .mobile-menu-button { display: none; }
 .topbar {
   position: sticky;
@@ -1087,5 +1087,37 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 #draft-stage { color: var(--blue-deep); font-weight: 700; }
 #next-step { border-left: 3px solid var(--blue); padding-left: 14px; }
 #journey-status { min-height: 1.5em; color: var(--blue-deep); }
+.storage-notice { padding: 14px; background: #fff7df; color: #654b14; border-left: 3px solid #c69a32; overflow-wrap: anywhere; }
+.journey-history details { border: 1px solid var(--line); border-radius: 8px; padding: 14px; margin: 10px 0; }
+.journey-history summary { cursor: pointer; font-weight: 650; overflow-wrap: anywhere; }
+.journey-history pre { white-space: pre-wrap; overflow-wrap: anywhere; font: inherit; line-height: 1.6; }
+.journey-history p, .journey-history li { overflow-wrap: anywhere; }
+.business-journey button:disabled { opacity: .55; cursor: not-allowed; }
+.business-journey :focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
 [hidden] { display: none !important; }
 @media(max-width:760px) { .journey-grid { grid-template-columns: 1fr; } .journey-card { padding: 15px; } }
+/* Content also reflows when zoom or a wide sidebar reduces its own available width. */
+@container workspace (max-width: 760px) {
+  .topbar { grid-template-columns: minmax(0, 1fr) auto; padding: 12px; gap: 10px; }
+  .topbar-title, .role-picker { display: none; }
+  .search-box { min-width: 0; }
+  .dashboard, .workspace-view { padding: 14px 12px 32px; }
+  .demo-banner { flex-wrap: wrap; margin: 12px 12px 0; }
+  .role-note { width: 100%; margin-left: 0; }
+  .hero-card, .content-grid, .journey-grid { grid-template-columns: 1fr; }
+  .hero-copy { padding: 24px 18px; }
+  .hero-copy h1 { font-size: 34px; }
+  .orbit-visual { min-height: 240px; border-left: 0; }
+  .metric-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .signal-row { grid-template-columns: 42px minmax(0, 1fr); }
+  .signal-tag { grid-column: 2; width: fit-content; }
+  .journey-card { padding: 15px; }
+}
+@container workspace (max-width: 520px) {
+  .metric-grid { grid-template-columns: 1fr; }
+  .hero-actions { align-items: stretch; flex-direction: column; }
+  .business-journey button { width: 100%; }
+}
+@media (max-width: 760px) {
+  .topbar { grid-template-columns: 42px minmax(0, 1fr) auto; }
+}

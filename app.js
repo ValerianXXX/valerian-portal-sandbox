@@ -230,7 +230,8 @@
   };
 
   function saveState() {
-    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    try { window.localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
+    catch { document.querySelector("#browser-storage-notice").hidden = false; }
   }
 
   function showToast(message) {
@@ -498,7 +499,8 @@
   });
   document.querySelector("#view-all-signals").addEventListener("click", () => navigate("leads"));
   document.querySelector("#reset-demo").addEventListener("click", () => {
-    window.localStorage.removeItem(STORAGE_KEY);
+    try { window.localStorage.removeItem(STORAGE_KEY); }
+    catch { document.querySelector("#browser-storage-notice").hidden = false; }
     state = { ...defaultState, addedRecords: {} };
     conversationGeneration++;
     elements.chatThread.replaceChildren();
